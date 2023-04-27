@@ -1,3 +1,57 @@
-* {
+html {
   background-color: blue;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background-color: white;
+}
+header nav {
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+header nav .hamburger-menu-icon {
+  border: none;
+}
+header nav .request-invite-btn {
+  display: none;
+}
+header nav ul {
+  display: none;
+}
+@media (min-width: 768px) {
+  header nav {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  header nav ul {
+    display: block;
+    list-style: none;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  header nav ul li {
+    margin: 0 1rem;
+  }
+  header nav .hamburger-menu-icon {
+    display: none;
+  }
+  header nav .request-invite-btn {
+    display: inline-block;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }/*# sourceMappingURL=styles.css.map */
