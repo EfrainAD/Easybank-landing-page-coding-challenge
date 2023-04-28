@@ -4,6 +4,26 @@ html {
 
 body {
   margin: 0;
+  font-family: "Public Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+  background-image: linear-gradient(to bottom right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 header {

@@ -1,3 +1,19 @@
+// Typography
+$font-family: 'Public Sans', sans-serif;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+$font-size: 18px;
+// Primary colors
+$color-dark-blue: hsl(233, 26%, 24%);
+$color-lime-green: hsl(136, 65%, 51%);
+$color-bright-cyan: hsl(192, 70%, 51%);
+// Neutral colors
+$color-grayish-blue: hsl(233, 8%, 62%);
+$color-light-grayish-blue: hsl(220, 16%, 96%);
+$color-very-light-gray: hsl(0, 0%, 98%);
+$color-white: hsl(0, 0%, 100%);
+
 @mixin center-within {
    display: flex; 
    justify-content: center;
@@ -7,9 +23,33 @@
 html {
    background-color: blue;
 } 
+
+// Default Tags
 body {
    margin: 0;
+   font-family: $font-family;
+   font-size: $font-size;
+   font-weight: $font-weight-regular;
 }
+.btn {
+   display: inline-block;
+   padding: 12px 24px;
+   border-radius: 50px;
+   text-transform: capitalize;
+   text-decoration: none;
+   color: $color-white;
+   background-image: linear-gradient(to bottom right, $color-lime-green, $color-bright-cyan);
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+   transition: all 0.3s ease;
+   
+   &:hover {
+      opacity: 0.7;
+      transform: translateY(-2px);
+      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+   }
+ }
+
+// Sections
 header {
    background-color: white;
    padding: 1.5rem;
@@ -54,11 +94,7 @@ header {
    }
 }
  
-// nav {
-//    background-color: gray;
-//    width: 100%;
-// }
-
+// TODO: move to Base Tags later
 .attribution {
    font-size: 11px;
    text-align: center;
