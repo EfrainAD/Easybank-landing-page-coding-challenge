@@ -1,3 +1,9 @@
+@mixin center-within {
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+}
+@mixin container-width {width: 80%;}
 html {
    background-color: blue;
 } 
@@ -6,8 +12,8 @@ body {
 }
 header {
    background-color: white;
+   padding: 1.5rem;
    nav {
-      margin: 1rem;
       display: flex;
       justify-content: space-between;
       .hamburger-menu-icon {
@@ -21,9 +27,12 @@ header {
       }
    }
    @media (min-width: 768px) {
+      @include center-within();
       nav {
+         @include container-width(); 
+         padding: 0;
          flex-direction: row;
-         justify-content: space-around;
+         justify-content: space-between;
          align-items: center;
          ul {
             display: block;
