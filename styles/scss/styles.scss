@@ -14,15 +14,21 @@ $color-light-grayish-blue: hsl(220, 16%, 96%);
 $color-very-light-gray: hsl(0, 0%, 98%);
 $color-white: hsl(0, 0%, 100%);
 
+// Header Links Styling
+$link-color: $color-dark-blue;
+$link-color-hover: $color-lime-green;
+$link-color-active: $color-bright-cyan;
+
 @mixin center-within {
    display: flex; 
    justify-content: center;
    align-items: center;
 }
 @mixin container-width {width: 80%;}
+
 html {
    background-color: blue;
-} 
+}
 
 // Default Tags
 body {
@@ -35,6 +41,7 @@ body {
    display: inline-block;
    padding: 12px 24px;
    border-radius: 50px;
+   text-align: center;
    text-transform: capitalize;
    text-decoration: none;
    color: $color-white;
@@ -59,14 +66,28 @@ header {
       .hamburger-menu-icon {
          border: none;
       }
-      .request-invite-btn {
+      .btn {
          display: none;
       }
       ul {
          display: none;
+         li {
+            position: relative;
+            a {
+               display: inline-block;
+               text-decoration: none;
+               font-weight: $font-weight-bold;
+               color: $link-color;
+               transition: all 0.3s ease;
+
+               &.active {
+                  background-color: $link-color-active;
+               }
+            }
+         }
       }
    }
-   @media (min-width: 768px) {
+   @media (min-width: 1440px) {
       @include center-within();
       nav {
          @include container-width(); 
@@ -82,12 +103,27 @@ header {
             justify-content: flex-start;
             li {
                margin: 0 1rem;
+
+               a {
+                  &:hover {
+                     color: $link-color-hover;
+                     &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: -42px;
+                        left: 0;
+                        height: .3rem;
+                        width: 100%;
+                        background-color: $link-color-hover;
+                     }
+                  }
+               }
             }
          }
          .hamburger-menu-icon {
             display: none;
          }
-         .request-invite-btn {
+         .btn {
             display: inline-block;
          }
       }

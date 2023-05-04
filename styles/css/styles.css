@@ -13,6 +13,7 @@ body {
   display: inline-block;
   padding: 12px 24px;
   border-radius: 50px;
+  text-align: center;
   text-transform: capitalize;
   text-decoration: none;
   color: hsl(0, 0%, 100%);
@@ -37,13 +38,26 @@ header nav {
 header nav .hamburger-menu-icon {
   border: none;
 }
-header nav .request-invite-btn {
+header nav .btn {
   display: none;
 }
 header nav ul {
   display: none;
 }
-@media (min-width: 768px) {
+header nav ul li {
+  position: relative;
+}
+header nav ul li a {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  color: hsl(233, 26%, 24%);
+  transition: all 0.3s ease;
+}
+header nav ul li a.active {
+  background-color: hsl(192, 70%, 51%);
+}
+@media (min-width: 1440px) {
   header {
     display: flex;
     justify-content: center;
@@ -66,10 +80,22 @@ header nav ul {
   header nav ul li {
     margin: 0 1rem;
   }
+  header nav ul li a:hover {
+    color: hsl(136, 65%, 51%);
+  }
+  header nav ul li a:hover::before {
+    content: "";
+    position: absolute;
+    bottom: -42px;
+    left: 0;
+    height: 0.3rem;
+    width: 100%;
+    background-color: hsl(136, 65%, 51%);
+  }
   header nav .hamburger-menu-icon {
     display: none;
   }
-  header nav .request-invite-btn {
+  header nav .btn {
     display: inline-block;
   }
 }
