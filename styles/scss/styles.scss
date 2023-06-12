@@ -4,6 +4,7 @@ $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-bold: 700;
 $font-size: 18px;
+$close-menu-size: 2rem;
 // Primary colors
 $color-dark-blue: hsl(233, 26%, 24%);
 $color-lime-green: hsl(136, 65%, 51%);
@@ -28,6 +29,7 @@ $link-color-active: $color-bright-cyan;
 
 html {
    background-color: blue;
+   // background-color: yellow;
 }
 
 // Default Tags
@@ -54,7 +56,26 @@ body {
       transform: translateY(-2px);
       box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
    }
+}
+
+#toggle-mobile-nenu:checked {
+   ~ ul {
+      display: block;
+   }
  }
+#toggle-mobile-nenu:checked + .hamburger img {
+   display: none;
+}
+#toggle-mobile-nenu:checked + .hamburger::before {
+   content: "x";
+   position: absolute;
+   display: inline-block;
+   right: 1.8rem;
+   top: 0.8rem;
+   font-size: $close-menu-size;
+   color: $color-grayish-blue;
+   font-weight: $font-weight-light;
+}
 
 // Sections
 header {
@@ -65,20 +86,36 @@ header {
       justify-content: space-between;
       .hamburger-menu-icon {
          border: none;
-      }
+      } 
       .btn {
          display: none;
       }
       ul {
          display: none;
+         position: absolute;
+         padding: 1.6rem;
+         // top: 16.0rem;
+         top: 12.7rem;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background-color: white;
+         width: 80vw;
+         
          li {
             position: relative;
+            padding: 0.7rem;
+            text-align: center;
+            list-style-type: none;
             a {
                display: inline-block;
                text-decoration: none;
                font-weight: $font-weight-bold;
                color: $link-color;
                transition: all 0.3s ease;
+
+               &:hover {
+                  color: $link-color-hover;
+               }
 
                &.active {
                   background-color: $link-color-active;
@@ -87,6 +124,7 @@ header {
          }
       }
    }
+
    @media (min-width: 1440px) {
       @include center-within();
       nav {
@@ -97,13 +135,24 @@ header {
          align-items: center;
          ul {
             display: block;
+            position: relative;
+            position: static;
+            width: auto;
+            transform: none;
+            // top: 2rem;
+            padding: 0;
+            // jlkj
             list-style: none;
             display: inline-flex;
             flex-direction: row;
             justify-content: flex-start;
+            // justify-content: center;
             li {
                margin: 0 1rem;
-
+               padding: 0;
+               text-align: center;
+               list-style-type: none;
+               
                a {
                   &:hover {
                      color: $link-color-hover;
@@ -119,6 +168,9 @@ header {
                   }
                }
             }
+         }
+         .hamburger {
+            display: none;
          }
          .hamburger-menu-icon {
             display: none;

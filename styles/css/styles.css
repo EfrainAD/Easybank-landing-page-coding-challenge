@@ -27,6 +27,25 @@ body {
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
 }
 
+#toggle-mobile-nenu:checked ~ ul {
+  display: block;
+}
+
+#toggle-mobile-nenu:checked + .hamburger img {
+  display: none;
+}
+
+#toggle-mobile-nenu:checked + .hamburger::before {
+  content: "x";
+  position: absolute;
+  display: inline-block;
+  right: 1.8rem;
+  top: 0.8rem;
+  font-size: 2rem;
+  color: hsl(233, 8%, 62%);
+  font-weight: 300;
+}
+
 header {
   background-color: white;
   padding: 1.5rem;
@@ -43,9 +62,19 @@ header nav .btn {
 }
 header nav ul {
   display: none;
+  position: absolute;
+  padding: 1.6rem;
+  top: 12.7rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 80vw;
 }
 header nav ul li {
   position: relative;
+  padding: 0.7rem;
+  text-align: center;
+  list-style-type: none;
 }
 header nav ul li a {
   display: inline-block;
@@ -53,6 +82,9 @@ header nav ul li a {
   font-weight: 700;
   color: hsl(233, 26%, 24%);
   transition: all 0.3s ease;
+}
+header nav ul li a:hover {
+  color: hsl(136, 65%, 51%);
 }
 header nav ul li a.active {
   background-color: hsl(192, 70%, 51%);
@@ -72,6 +104,11 @@ header nav ul li a.active {
   }
   header nav ul {
     display: block;
+    position: relative;
+    position: static;
+    width: auto;
+    transform: none;
+    padding: 0;
     list-style: none;
     display: inline-flex;
     flex-direction: row;
@@ -79,6 +116,9 @@ header nav ul li a.active {
   }
   header nav ul li {
     margin: 0 1rem;
+    padding: 0;
+    text-align: center;
+    list-style-type: none;
   }
   header nav ul li a:hover {
     color: hsl(136, 65%, 51%);
@@ -91,6 +131,9 @@ header nav ul li a.active {
     height: 0.3rem;
     width: 100%;
     background-color: hsl(136, 65%, 51%);
+  }
+  header nav .hamburger {
+    display: none;
   }
   header nav .hamburger-menu-icon {
     display: none;
