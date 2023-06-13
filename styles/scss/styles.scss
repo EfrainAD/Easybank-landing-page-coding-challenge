@@ -181,6 +181,30 @@ header {
       }
    }
 }
+main {
+   .intro {
+      .intro-img-container {
+         position: relative;
+         overflow: hidden;
+         
+         .top-layer-img {
+            position: absolute;
+            width: 100%;
+            bottom: 14%;
+            z-index: -1;
+         }
+         .bottom-layer-img {
+            position: relative;
+            width: 100%;
+            // object-fit:cover;
+            z-index: -2;
+         }
+      }
+      // .block {
+      //    // background-color: black; // passed
+      // }
+   }
+}
  
 // TODO: move to Base Tags later
 .attribution {

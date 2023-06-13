@@ -143,6 +143,22 @@ header nav ul li a.active {
   }
 }
 
+main .intro .intro-img-container {
+  position: relative;
+  overflow: hidden;
+}
+main .intro .intro-img-container .top-layer-img {
+  position: absolute;
+  width: 100%;
+  bottom: 14%;
+  z-index: -1;
+}
+main .intro .intro-img-container .bottom-layer-img {
+  position: relative;
+  width: 100%;
+  z-index: -2;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
