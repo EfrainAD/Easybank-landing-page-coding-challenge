@@ -1,12 +1,12 @@
-html {
-  background-color: blue;
-}
-
 body {
   margin: 0;
   font-family: "Public Sans", sans-serif;
   font-size: 18px;
   font-weight: 400;
+}
+
+p {
+  color: hsl(233, 8%, 62%);
 }
 
 .btn {
@@ -25,6 +25,13 @@ body {
   opacity: 0.7;
   transform: translateY(-2px);
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.block {
+  text-align: center;
+}
+.block p {
+  font-size: 1rem;
 }
 
 #toggle-mobile-nenu:checked ~ ul {
@@ -157,6 +164,25 @@ main .intro .intro-img-container .bottom-layer-img {
   position: relative;
   width: 100%;
   z-index: -2;
+}
+main .intro .intro-content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .intro .intro-content-container .block {
+  margin-bottom: 3rem;
+  max-width: 25rem;
+}
+main .intro .intro-content-container .block h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 300;
+}
+main .intro .intro-content-container .block p {
+  text-align: justify;
+  margin: 2rem;
+  font-weight: 300;
 }
 
 .attribution {

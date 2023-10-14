@@ -14,22 +14,18 @@ $color-grayish-blue: hsl(233, 8%, 62%);
 $color-light-grayish-blue: hsl(220, 16%, 96%);
 $color-very-light-gray: hsl(0, 0%, 98%);
 $color-white: hsl(0, 0%, 100%);
-
 // Header Links Styling
 $link-color: $color-dark-blue;
 $link-color-hover: $color-lime-green;
 $link-color-active: $color-bright-cyan;
 
 @mixin center-within {
-   display: flex; 
+   display: flex;
    justify-content: center;
    align-items: center;
 }
-@mixin container-width {width: 80%;}
-
-html {
-   background-color: blue;
-   // background-color: yellow;
+@mixin container-width {
+   width: 80%;
 }
 
 // Default Tags
@@ -39,6 +35,10 @@ body {
    font-size: $font-size;
    font-weight: $font-weight-regular;
 }
+p {
+   color: $color-grayish-blue;
+}
+
 .btn {
    display: inline-block;
    padding: 12px 24px;
@@ -47,14 +47,25 @@ body {
    text-transform: capitalize;
    text-decoration: none;
    color: $color-white;
-   background-image: linear-gradient(to bottom right, $color-lime-green, $color-bright-cyan);
+   background-image: linear-gradient(
+      to bottom right,
+      $color-lime-green,
+      $color-bright-cyan
+   );
    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
    transition: all 0.3s ease;
-   
+
    &:hover {
       opacity: 0.7;
       transform: translateY(-2px);
       box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+   }
+}
+.block {
+   // background-color: gray; // passed
+   text-align: center;
+   p {
+      font-size: 1rem;
    }
 }
 
@@ -62,12 +73,12 @@ body {
    ~ ul {
       display: block;
    }
- }
+}
 #toggle-mobile-nenu:checked + .hamburger img {
    display: none;
 }
 #toggle-mobile-nenu:checked + .hamburger::before {
-   content: "x";
+   content: 'x';
    position: absolute;
    display: inline-block;
    right: 1.8rem;
@@ -86,7 +97,7 @@ header {
       justify-content: space-between;
       .hamburger-menu-icon {
          border: none;
-      } 
+      }
       .btn {
          display: none;
       }
@@ -100,7 +111,7 @@ header {
          transform: translate(-50%, -50%);
          background-color: white;
          width: 80vw;
-         
+
          li {
             position: relative;
             padding: 0.7rem;
@@ -128,7 +139,7 @@ header {
    @media (min-width: 1440px) {
       @include center-within();
       nav {
-         @include container-width(); 
+         @include container-width();
          padding: 0;
          flex-direction: row;
          justify-content: space-between;
@@ -152,16 +163,16 @@ header {
                padding: 0;
                text-align: center;
                list-style-type: none;
-               
+
                a {
                   &:hover {
                      color: $link-color-hover;
                      &::before {
-                        content: "";
+                        content: '';
                         position: absolute;
                         bottom: -42px;
                         left: 0;
-                        height: .3rem;
+                        height: 0.3rem;
                         width: 100%;
                         background-color: $link-color-hover;
                      }
@@ -186,7 +197,6 @@ main {
       .intro-img-container {
          position: relative;
          overflow: hidden;
-         
          .top-layer-img {
             position: absolute;
             width: 100%;
@@ -200,12 +210,26 @@ main {
             z-index: -2;
          }
       }
-      // .block {
-      //    // background-color: black; // passed
-      // }
+      .intro-content-container {
+         @include center-within();
+         .block {
+            margin-bottom: 3rem;
+            max-width: 25rem;
+            h1 {
+               margin: 0;
+               font-size: 2rem;
+               font-weight: $font-weight-light;
+            }
+            p {
+               text-align: justify;
+               margin: 2rem;
+               font-weight: $font-weight-light;
+            }
+         }
+      }
    }
 }
- 
+
 // TODO: move to Base Tags later
 .attribution {
    font-size: 11px;
@@ -214,4 +238,3 @@ main {
 .attribution a {
    color: hsl(228, 45%, 44%);
 }
-
