@@ -169,10 +169,12 @@ main .intro .intro-content-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 2rem;
 }
 main .intro .intro-content-container .block {
-  margin-bottom: 3rem;
-  max-width: 25rem;
+  display: grid;
+  grid-gap: 2rem;
+  max-width: 20rem;
 }
 main .intro .intro-content-container .block h1 {
   margin: 0;
@@ -181,7 +183,7 @@ main .intro .intro-content-container .block h1 {
 }
 main .intro .intro-content-container .block p {
   text-align: justify;
-  margin: 2rem;
+  margin: 0;
   font-weight: 300;
 }
 
